@@ -2,8 +2,8 @@ import json
 
 
 def generate_matrix(key_word):
-    alphabet = "абвгдежзиклмнопрстуфхцчшщъыьэюя"
-    key_word = key_word.lower().replace('ё', 'е').replace('й', 'и').replace('ь', 'ъ')
+    alphabet = "абвгдежзиклмнопрстуфхцчшщьыэюя"
+    key_word = key_word.lower().replace('ё', 'е').replace('й', 'и').replace('ъ', 'ь')
 
     # Отобразить ключевое слово без дубликатов
     key_word = "".join(sorted(set(key_word), key=key_word.index))
@@ -74,7 +74,6 @@ def playfair_cipher(text, key_word, mode):
                     result += matrix[row1][col2]
                     result += matrix[row2][col1]
     return result
-
 
 
 with open('input.json', 'r', encoding='utf-8') as file:
